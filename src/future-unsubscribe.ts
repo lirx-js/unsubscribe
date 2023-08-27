@@ -1,4 +1,5 @@
 import { IUnsubscribe } from './unsubscribe.type';
+import { noop } from './noop.constant.private';
 
 export interface IRunning {
   (): boolean;
@@ -10,8 +11,6 @@ export interface IFutureUnsubscribeFunction {
     running: IRunning,
   ): IUnsubscribe;
 }
-
-const noop = () => {};
 
 export function futureUnsubscribe(
   callback: IFutureUnsubscribeFunction,

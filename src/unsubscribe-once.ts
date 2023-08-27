@@ -1,5 +1,5 @@
-import { noop } from '../misc/noop';
 import { IUnsubscribe } from './unsubscribe.type';
+import { noop } from './noop.constant.private';
 
 export function unsubscribeOnce(
   unsubscribe: IUnsubscribe,

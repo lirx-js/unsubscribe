@@ -2,6 +2,9 @@ import { IUnsubscribe } from './unsubscribe.type';
 
 export type IUnsubscribeSet = Set<IUnsubscribe>;
 
+export function unsubscribeSet(): IUnsubscribeSet {
+  return new Set<IUnsubscribe>();
+}
 
 export function cleanUnsubscribeSet(
   set: IUnsubscribeSet,
