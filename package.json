@@ -1,20 +1,35 @@
 {
   "name": "@lirx/unsubscribe",
-  "version": "1.0.0",
-  "description": "Description",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lirx-js/unsubscribe"
-  },
+  "version": "2.0.0",
+  "type": "module",
+  "main": "./index.js",
   "scripts": {
-    "reinstall": "rm -rf ./node_modules && rm -f ./yarn.lock && yarn install"
+    "fb:build": "node fabrique/actions/build.js",
+    "fb:format": "prettier --write --ignore-unknown --config ./.prettierrc \"src/**/*.{js,jsx,ts,tsx,html,css,scss}\"",
+    "fb:test": "vitest",
+    "fb:test:coverage": "vitest run --coverage",
+    "fb:prod": "node fabrique/actions/build.js && cd dist && npm publish --access public --registry https://registry.npmjs.org",
+    "fb:dev": "node fabrique/actions/build.js --dev && cd dist && npm publish --quiet --registry http://localhost:4873 --tag beta",
+    "fb:dev:public": "node fabrique/actions/build.js --dev && cd dist && npm publish --access public --registry https://registry.npmjs.org --tag beta"
   },
+  "description": "",
   "keywords": [],
-  "author": "Valentin Richard",
+  "author": "Valentin RICHARD",
   "license": "MIT",
   "access": "public",
-  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lirx-js/unsubscribe.git"
+  },
   "devDependencies": {
-    "@types/jest": "^29.5.3"
+    "prettier": "^3.3.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.4"
+  },
+  "packageManager": "yarn@4.5.1",
+  "fabrique": {
+    "version": "0.2.0",
+    "type": "lib"
   }
 }

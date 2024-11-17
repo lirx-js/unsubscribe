@@ -1,4 +1,4 @@
-import { IUnsubscribe } from './unsubscribe.type';
+import type { IUnsubscribe } from './unsubscribe.type.js';
 
 export function mergeUnsubscribeFunctions(
   unsubscribeFunctions: IUnsubscribe[],

@@ -1,5 +1,5 @@
-import { IUnsubscribe } from './unsubscribe.type';
-import { noop } from './noop.constant.private';
+import type { IUnsubscribe } from './unsubscribe.type.js';
+import { noop } from './noop.constant.private.js';
 
 export interface IRunning {
   (): boolean;

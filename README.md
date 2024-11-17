@@ -5,10 +5,9 @@
 
 ## @lirx/unsubscribe
 
-
 ## 📦 Installation
 
-```bash
+```shell
 yarn add @lirx/unsubscribe
 # or
 npm install @lirx/unsubscribe --save
